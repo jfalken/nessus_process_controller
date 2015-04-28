@@ -1,0 +1,26 @@
+# When populated, this file contains sensitive info 
+# (nessus credentials and aws access keys); handle appropriately.
+
+# Logfile Details
+log:
+    file: nessus_automate.log
+    format: '[%(asctime)s] [%(levelname)s] - %(message)s'
+    dateformat: '%Y-%m-%d %H:%M:%S'
+
+# Nessus Service Configuration Data
+nessus:
+    username: user@yourdomain.com
+    password: password
+    server: cloud.tenable.com
+    port: 443
+
+# AWS Nessus Report/Scan Template Names [list]
+# key/secret are the amazon credentials API credentials (read-only access)
+aws_accounts:
+    - name: account_1
+      key: aws_access_key
+      secret: secret
+    - name: account_2
+      key: aws_access_key
+      secret: secret
+
