@@ -272,7 +272,7 @@ def main(config):
                         targets = ['no.hosts.were.found.local.10gen.com']
 
                     # Send report summary to these email(s)
-                    emails = ['security-scans@10gen.com']
+                    emails = ['youremail@yourdomain.xyz']
 
                     # Get Scan object_id
                     policy = nrc.get_scan_policy_by_name('Perimeter Scan (exhaustive)')  # must already exist
