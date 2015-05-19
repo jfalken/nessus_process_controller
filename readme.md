@@ -22,6 +22,17 @@ Under `aws_accounts`, for each AWS account you have, you must list the AWS Acces
 
 3. Install MongoDB locally. Bind to localhost
 
+4. Edit email
+
+When scans are done, the Tenable service will send an email summary. Right now this value is hardcoded instead of a param in the yaml file. Change the hard coded value in `nessus_process_controller.py`, where you see the line:
+
+```
+# Send report summary to these email(s)
+emails = ['youremail@yourdomain.xyz']
+```
+
+You can enter multiple emails in this array.
+                    
 ## Usage
 
 `./nessus_process_controller.py -c config`
