@@ -46,10 +46,21 @@ usage: nessus_process_controller.py [-h] -c CONFIG
 nessus_process_controller.py: error: argument -c/--config is required
 ```
 
-
 ## Why?
 
-We wanted a reliable way to ensure scans we want periodically run were actually being run, and we get the results in our own system, so we can parse the XMLs for our own needs and have HTMLs ready for quick viewing. 
+We wanted a reliable way to ensure scans we want periodically run were actually being run, and we get the results in our own system, so we can parse the XMLs for our own needs and have HTMLs ready for quick 
+viewing. 
+
+## Output
+
+XML and HTML files are stored in gridfs in MongoDB.
+XML Files are in the `xmlfiles` database, and HTMLFiles are in the `htmfiles` database. For more information on gridfs please see [http://docs.mongodb.org/manual/core/gridfs/](http://docs.mongodb.org/manual/core/gridfs/)
+
+JSON output is stored in the `nessus` database under the collection `details`.
+
+Note, full scan information is only available in the XML document; you must parse this if you want all the info. The HTML is a nice graphical summary you can read. And the JSON output only shows the exact JSON output from Tenable, which at this time, is basically a breakdown of the number and category of vulns.
+
+
 
 
 
